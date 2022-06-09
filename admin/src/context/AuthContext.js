@@ -1,4 +1,5 @@
-const { createContext, useEffect, useReducer } = require("react");
+import React from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem("user")) || null,
@@ -23,24 +24,6 @@ const AuthReducer = (state, action) => {
         error: null,
       };
     case "LOGIN_FAILURE":
-      return {
-        user: null,
-        loading: false,
-        error: action.payload,
-      };
-      case "REGISTER_START":
-      return {
-        user: null,
-        loading: true,
-        error: null,
-      };
-    case "REGISTER_SUCCESS":
-      return {
-        user: action.payload,
-        loading: false,
-        error: null,
-      };
-    case "REGISTER_FAILURE":
       return {
         user: null,
         loading: false,
