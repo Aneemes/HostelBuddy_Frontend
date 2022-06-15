@@ -86,31 +86,37 @@ export const roomColumns = [
 ];
 
 export const bookingColumns = [
-  { field: "_id", headerName: "ID", width: 70 },
-  // {
-  //   field: "hostel",
-  //   headerName: "hostel",
-  //   width: 230,
-  // },
-  // {
-  //   field: "user",
-  //   headerName: "user",
-  //   width: 200,
-  // },
+  { field: "_id", headerName: "ID", width: 200 },
+  {
+    field: "hostel",
+    headerName: "hostel",
+    width: 230,
+  },
+  {
+    field: "user",
+    headerName: "user",
+    width: 200,
+  },
   {
     field: "checkInDate",
     headerName: "checkInDate",
-    width: 100,
+    width: 200,
   },
   {
     field: "checkOutDate",
     headerName: "checkOutDate ",
-    width: 100,
+    width: 200,
   },
   {
     field: "totalPrice",
     headerName: "totalPrice ",
     width: 100,
   },
+  {
+  field: "status",
+  headerName: "status ",
+  width: 100,
+  },
+
 
 ];

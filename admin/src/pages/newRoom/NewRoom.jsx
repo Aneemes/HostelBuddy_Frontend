@@ -24,6 +24,7 @@ const NewRoom = () => {
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
       await axios.post(`/rooms/${hostelId}`, { ...info, roomNumbers });
+      document.getElementById("create-room-form").reset();
     } catch (err) {
       console.log(err);
     }
@@ -40,7 +41,7 @@ const NewRoom = () => {
         </div>
         <div className="bottom">
           <div className="right">
-            <form>
+            <form id ="create-room-form">
               {roomInputs.map((input) => (
                 <div className="formInput" key={input.id}>
                   <label>{input.label}</label>

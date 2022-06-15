@@ -13,14 +13,12 @@ const Home = () => {
       <Navbar />
       <Header/>
       <div class="homeContainer">
-      
       <h1 class="mt-5"> Well known place</h1>
         <Featured/>
         <h1 class="homeTitle">Browse by property type</h1>
-        <PropertyList/>
-        
         <FeaturedProperties/> 
         <MailList/>
+        <PropertyList/>
         <Footer/>
       </div>
     </div>
