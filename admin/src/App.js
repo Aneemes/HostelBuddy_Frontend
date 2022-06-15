@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Edit from "./pages/edit/Edit";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 // import "./style/dark.scss";
@@ -66,6 +67,14 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="edit"
+                element={
+                  <ProtectedRoute>
+                    <Single />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
             <Route path="hostels">
               <Route
@@ -89,6 +98,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <NewHostel  />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="edit/:hostelId"
+                element={
+                  <ProtectedRoute>
+                    <Edit />
                   </ProtectedRoute>
                 }
               />
@@ -139,6 +156,14 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
+                {/* <Route
+                  path = "edit"
+                  element={
+                    <ProtectedRoute>
+                      <Edit/>
+                    </ProtectedRoute>
+                  }
+                /> */}
               </Route>
             </Route>
           </Route>

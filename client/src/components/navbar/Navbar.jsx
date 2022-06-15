@@ -1,5 +1,8 @@
 import React from 'react';
 import {
+  NavDropdown
+} from 'react-bootstrap';
+import {
   Nav,
   NavLink,
   Bars,
@@ -52,7 +55,15 @@ const Navbar = () => {
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
-        {user ? user.username && <NavBtn onClick={(e) => logout()} > Logout </NavBtn>: (
+        {user ? user.username &&
+        //  <NavBtn onClick={(e) => logout()} > Logout </NavBtn>
+        <NavDropdown title={user.username} id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Edit User</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4"> <NavBtn onClick={(e) => logout()} > Logout </NavBtn></NavDropdown.Item>
+        </NavDropdown>
+         : (
         <NavBtn>
           <NavBtnLink to='/signin'>Sign In</NavBtnLink> <NavBtnLink to='/signup'>Sign Up</NavBtnLink>
         </NavBtn>

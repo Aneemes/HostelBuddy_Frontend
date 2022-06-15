@@ -75,6 +75,7 @@ export const hostelInputs = [
     label: "Name",
     type: "text",
     placeholder: "My Hostel",
+    
   },
   {
     id: "type",
@@ -97,7 +98,7 @@ export const hostelInputs = [
   {
     id: "distance",
     label: "Distance from City Center",
-    type: "text",
+    type: "number",
     placeholder: "500",
   },
   {

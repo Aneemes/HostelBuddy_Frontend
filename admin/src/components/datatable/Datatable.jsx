@@ -23,6 +23,13 @@ const Datatable = ({columns}) => {
     } catch (err) {}
   };
 
+  // const handleClick = async(id) =>{
+  //   try{
+  //     await axios.get(`/${path}/${id}`);
+  //   }catch(err){}
+  // };
+  
+
   const actionColumn = [
     {
       field: "action",
@@ -30,8 +37,8 @@ const Datatable = ({columns}) => {
       width: 200,
       renderCell: (params) => {
         return (
-          <div className="cellAction">
-            <Link to={`/${path}/edit`} style={{ textDecoration: "none" }}>
+          <div className="cellAction" >
+            <Link to={`/${path}/edit/${params.row._id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">Edit</div>
             </Link>
             <div

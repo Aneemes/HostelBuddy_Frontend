@@ -1,38 +1,52 @@
-export const hostelState = {
-  hostels: null,
-  addHostelModal: false,
-  editHostelModal: {
-    modal: false,
-    _id: "",
-    name: "",
-    type: "",
-    city: null,
-    address: "",
-    distance: "",
-    photos: "",
-    title: "",
-    desc: "",
-    rooms: "",
-    cheapestPrice: "",
-    featured: "",
-  },
+import React from "react";
+import { createContext, useEffect, useReducer } from "react";
+
+const INITIAL_STATE = {
+  loading: false,
+  error: null,
 };
 
-export const hostelReducer = (state, action) => {
+export const HostelContext = createContext();
+
+const HostelReducer = (state, action) => {
   switch (action.type) {
-    /* Get all Hostel */
-    case "fetchHostelsAndChangeState":
+    case "ADD_START":
       return {
-        ...state,
-        hostels: action.payload,
+        file: null,
+        loading: true,
+        error: null,
       };
-    /* Create a Hostel */
-    case "addHostelModal":
+    case "ADD_SUCCESS":
       return {
-        ...state,
-        addHostelModal: action.payload,
+        file: action.payload,
+        loading: false,
+        error: null,
       };
-    /* Edit a Hostel */
-    
+    case "ADD_FAILURE":
+      return {
+        file: null,
+        loading: false,
+        error: action.payload,
+      };
+
+    default:
+      return state;
   }
+};
+
+export const HostelContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(HostelReducer, INITIAL_STATE);
+
+  return (
+    <HostelContext.Provider
+      value={{
+        user: state.user,
+        loading: state.loading,
+        error: state.error,
+        dispatch,
+      }}
+    >
+      {children}
+    </HostelContext.Provider>
+  );
 };

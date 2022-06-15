@@ -7,7 +7,7 @@ const SearchItem = ({ item }) => {
   
   <div class="card">
   <div class="card-meta">
-    <img src={item.photos[0]} alt="" className="siImg" />
+    <img src={item.photos} alt="" className="siImg" />
     <ul class="card-meta-detail">
       <li class="card-meta-author">
         <i class="fa fa-user"></i>{item.name}
