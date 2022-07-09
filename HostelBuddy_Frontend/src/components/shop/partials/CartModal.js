@@ -71,7 +71,7 @@ const CartModal = (props) => {
         >
           <div className="overflow-y-auto">
             <div className="border-b border-gray-700 flex justify-between">
-              <div className="p-4 text-white text-lg font-semibold">Cart</div>
+              <div className="p-4 text-white text-lg font-semibold">Your Booking</div>
               {/* Cart Modal Close Button */}
               <div className="p-4 text-white">
                 <svg
@@ -107,7 +107,7 @@ const CartModal = (props) => {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center justify-between space-x-2">
                               <div className="text-sm text-gray-400">
-                                Quantity :
+                                Number of People :
                               </div>
                               <div className="flex items-end">
                                 <span className="text-sm text-gray-200">
@@ -120,7 +120,7 @@ const CartModal = (props) => {
                               <span className="text-sm text-gray-400">
                                 Subtotoal :
                               </span>{" "}
-                              ${subTotal(item._id, item.pPrice)}.00
+                              Rs.{subTotal(item._id, item.pPrice)}.00
                             </div>{" "}
                             {/* SUbtotal Count */}
                           </div>
@@ -161,7 +161,7 @@ const CartModal = (props) => {
               onClick={(e) => cartModalOpen()}
               className="cursor-pointer px-4 py-2 border border-gray-400 text-white text-center cursor-pointer"
             >
-              Continue shopping
+              Continue your booking
             </div>
             {data.cartTotalCost ? (
               <Fragment>
@@ -173,7 +173,7 @@ const CartModal = (props) => {
                       cartModalOpen();
                     }}
                   >
-                    Checkout ${data.cartTotalCost}.00
+                    Checkout Rs.{data.cartTotalCost}.00
                   </div>
                 ) : (
                   <div

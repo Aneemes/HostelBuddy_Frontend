@@ -33,7 +33,8 @@ const Contact = () => {
       const contact = { name, email, message }
       console.log(contact)
       await axios.post(`${apiURL}/api/contact`, contact);
-      history.push('/')
+      history.push('/contact')
+      window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
@@ -84,7 +85,10 @@ const Contact = () => {
           })}
           id="message" class="form-control rounded border-white mb-3 form-input" rows="5" cols="30" placeholder="Message" required/>
         </div> */}
-        <Button onClick={handleClick} class="button" type="submit">Submit</Button>
+        <Button onClick={handleClick}  type="submit"
+         className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
+         style={{ background: "#303031" }}
+        >Submit</Button>
         
       </form>
     </div>

@@ -124,7 +124,7 @@ const LocationTable = ({ order, editOrder }) => {
               {order.status}
             </span>
           )}
-          {order.status === "Delivered" && (
+          {order.status === "Approved" && (
             <span className="block text-green-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
             </span>
@@ -136,7 +136,7 @@ const LocationTable = ({ order, editOrder }) => {
           )}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          ${order.amount}.00
+          Rs.{order.amount}.00
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
           {order.transactionId}

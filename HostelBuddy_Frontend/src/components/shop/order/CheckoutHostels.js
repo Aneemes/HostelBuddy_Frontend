@@ -73,7 +73,7 @@ export const CheckoutComponent = (props) => {
                   ) : (
                     ""
                   )}
-                  <div className="flex flex-col py-2">
+                  {/* <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
                       Check-in Date
                     </label>
@@ -91,7 +91,7 @@ export const CheckoutComponent = (props) => {
                       className="border px-4 py-2"
                       placeholder="choose date..."
                     />
-                  </div>
+                  </div> */}
                   <div className="flex flex-col py-2 mb-2">
                     <label htmlFor="phone" className="pb-2">
                       Phone
@@ -193,13 +193,13 @@ const CheckoutHostels = ({ hostels }) => {
                     {hostel.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${hostel.pPrice}.00{" "}
+                    Price : Rs.{hostel.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantitiy : {quantity(hostel._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(hostel._id, hostel.pPrice)}.00
+                    Subtotal : Rs.{subTotal(hostel._id, hostel.pPrice)}.00
                   </div>
                 </div>
               </div>

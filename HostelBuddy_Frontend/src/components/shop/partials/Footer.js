@@ -8,7 +8,7 @@ const Footer = (props) => {
         style={{ background: "#303031", color: "#87898A" }}
         className="z-10 py-6 px-4 md:px-12 text-center"
       >
-        Developed & Designed @aneemes © Copyright {moment().format("YYYY")}
+        Developed & Designed @2AISR © Copyright {moment().format("YYYY")}
       </footer>
     </Fragment>
   );

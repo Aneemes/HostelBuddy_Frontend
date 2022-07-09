@@ -31,7 +31,7 @@ const SellTable = () => {
     <Fragment>
       <div className="col-span-1 overflow-auto bg-white shadow-lg p-4">
         <div className="text-2xl font-semibold mb-6 text-center">
-          Today's Orders{" "}
+          Today's Bookings-{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}
         </div>
         <table className="table-auto border w-full my-2">
@@ -40,8 +40,8 @@ const SellTable = () => {
               <th className="px-4 py-2 border">Hostels</th>
               <th className="px-4 py-2 border">Image</th>
               <th className="px-4 py-2 border">Status</th>
-              <th className="px-4 py-2 border">Order Address</th>
-              <th className="px-4 py-2 border">Ordered at</th>
+              
+              <th className="px-4 py-2 border">Booked at</th>
             </tr>
           </thead>
           <tbody>
@@ -55,7 +55,7 @@ const SellTable = () => {
                   colSpan="5"
                   className="text-xl text-center font-semibold py-8"
                 >
-                  No orders found today
+                  No bookings found today
                 </td>
               </tr>
             )}
@@ -64,7 +64,7 @@ const SellTable = () => {
         <div className="text-sm text-gray-600 mt-2">
           Total{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}{" "}
-          orders found
+          Bookings found
         </div>
         <div className="flex justify-center">
           <span
@@ -122,7 +122,7 @@ const TodayOrderTable = ({ order }) => {
               {order.status}
             </span>
           )}
-          {order.status === "Delivered" && (
+          {order.status === "Approved" && (
             <span className="block text-green-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
             </span>
@@ -133,7 +133,7 @@ const TodayOrderTable = ({ order }) => {
             </span>
           )}
         </td>
-        <td className="p-2 text-center">{order.address}</td>
+       
         <td className="p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>

@@ -65,7 +65,7 @@ const Hostel = () => {
                 </div>
                 <div className="md:w-1/2 md:flex md:items-center md:justify-around">
                   <div className="font-semibold text-gray-600">
-                    ${hostel.pPrice}.00
+                  Rs.{hostel.pPrice}.00
                   </div>
                   {hostel.pQuantity > 0 ? (
                     <div className="text-green-500 my-1 md:my-0">Booking Available</div>

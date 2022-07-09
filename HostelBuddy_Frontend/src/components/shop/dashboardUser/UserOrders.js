@@ -32,9 +32,10 @@ const TableHeader = () => {
 const TableBody = ({ order }) => {
   const params = useParams();
   const handleDelete = async (id) => {
-    console.log(id)
+    
     try {
-      const oId = id
+      const oId = {id}
+      console.log(oId)
       await axios.post(`${apiURL}/api/order/delete-order`, oId);
     } catch (err) {}
   };
@@ -72,7 +73,7 @@ const TableBody = ({ order }) => {
               {order.status}
             </span>
           )}
-          {order.status === "Delivered" && (
+          {order.status === "Approved" && (
             <span className="block text-green-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
             </span>
@@ -84,7 +85,7 @@ const TableBody = ({ order }) => {
           )}
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">
-          ${order.amount}.00
+        Rs.{order.amount}.00
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
@@ -159,7 +160,7 @@ const OrdersComponent = () => {
       <div className="flex flex-col w-full my-4 md:my-0 md:w-9/12 md:px-8">
         <div className="border">
           <div className="py-4 px-4 text-lg font-semibold border-t-2 border-yellow-700">
-            Orders
+            Booking History
           </div>
           <hr />
           <div className="overflow-auto bg-white shadow-lg p-4">
