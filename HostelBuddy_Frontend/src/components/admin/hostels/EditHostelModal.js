@@ -312,7 +312,7 @@ const EditHostelModal = (props) => {
             </div>
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="quantity">Hostel in Stock *</label>
+                <label htmlFor="quantity">Room in Stocks *</label>
                 <input
                   value={editformData.pQuantity}
                   onChange={(e) =>
