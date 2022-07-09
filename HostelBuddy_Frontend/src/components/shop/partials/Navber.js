@@ -313,6 +313,7 @@ const Navber = (props) => {
             ) : (
               /* Login Modal Button */
               <div
+                id="onclick"
                 onClick={(e) => loginModalOpen()}
                 className="cursor-pointer hover:bg-gray-200 px-2 py-2 rounded-lg"
                 title="Login"
