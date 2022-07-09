@@ -178,7 +178,7 @@ const HostelDetailsSection = (props) => {
               <div className="text-2xl tracking-wider">{sHostel.pName}</div>
               <div className="flex justify-between items-center">
                 <span className="text-xl tracking-wider text-yellow-700">
-                  ${sHostel.pPrice}.00
+                Rs.{sHostel.pPrice}.00
                 </span>
                 <span>
                   <svg

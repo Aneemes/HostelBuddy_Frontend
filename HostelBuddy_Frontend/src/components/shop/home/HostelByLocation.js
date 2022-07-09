@@ -89,7 +89,7 @@ const AllHostel = ({ hostels }) => {
                       </span>
                     </div>
                   </div>
-                  <div>{item.pPrice}.00$</div>
+                  <div>Rs.{item.pPrice}.00</div>
                   <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                     <svg
                       className="w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700"

@@ -74,7 +74,7 @@ const DashboardCard = (props) => {
           <div className="text-2xl font-semibold">
             {data ? data.totalData.Orders : 0}
           </div>
-          <div className="text-lg font-medium">Orders</div>
+          <div className="text-lg font-medium">Bookings</div>
           <div className="flex items-center space-x-1 text-green-500">
             <span>10%</span>
             <span>

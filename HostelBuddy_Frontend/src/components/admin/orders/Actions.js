@@ -63,9 +63,9 @@ export const filterOrder = async (
       newData = responseData.Orders.filter((item) => item.status === "Shipped");
       dispatch({ type: "fetchOrderAndChangeState", payload: newData });
       setDropdown(!dropdown);
-    } else if (type === "Delivered") {
+    } else if (type === "Approved") {
       newData = responseData.Orders.filter(
-        (item) => item.status === "Delivered"
+        (item) => item.status === "Approved"
       );
       dispatch({ type: "fetchOrderAndChangeState", payload: newData });
       setDropdown(!dropdown);
